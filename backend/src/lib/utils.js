@@ -1,18 +1,22 @@
 import jwt from "jsonwebtoken";
 
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+
 export const generateToken = (userId, res) => {
-    const JWT_SECRET = 'mysecretkey';
+  
 
     
-    const NODE_ENV = 'development';
 
-    const token = jwt.sign({ userId }, JWT_SECRET, {
+    const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
         expiresIn: "7d",
     });
 
     res.cookie("jwt", token, {
         httpOnly: true,
-        secure: NODE_ENV !== "development",
+        secure: process.env.NODE_ENV !== "development",
         sameSite: "Lax", // ✅ prevents blocking on cross-origin
         maxAge: 7 * 24 * 60 * 60 * 1000,
     });
