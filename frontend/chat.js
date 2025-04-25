@@ -22,14 +22,15 @@ window.onload = async () => {
 
   alert("logged in");
 
-
+  document.getElementById("loading").style.display = "block";
 
   const authRes = await fetch(`${API}/api/auth/check`, {
     credentials: "include",
   });
 
 
-
+  document.getElementById("loading").style.display = "none";
+  
   if (!authRes.ok) {
 
     window.location.href = "index.html";
@@ -56,12 +57,17 @@ window.onload = async () => {
 
 // Load sidebar users
 async function loadUsers() {
- 
+
+    document.getElementById("loading").style.display = "block";
   const res = await fetch(`${API}/api/message/users`, {
     credentials: "include",
   });
 
+
   const users = await res.json();
+
+ document.getElementById("loading").style.display = "none";
+  
   const userList = document.getElementById("user-list");
   userList.innerHTML = "";
 
@@ -138,6 +144,8 @@ async function fetchMessages(selectedUserName) {
      return;
   }
 
+   document.getElementById("loading").style.display = "block";
+
 
   const res = await fetch(`${API}/api/message/${selectedUserId}`, {
     method: "GET",
@@ -145,6 +153,11 @@ async function fetchMessages(selectedUserName) {
   });
 
   const messages = await res.json();
+
+
+  document.getElementById("loading").style.display = "none";
+
+  
   const messagesDiv = document.getElementById("messages");
   messagesDiv.innerHTML = "";
 
@@ -282,8 +295,14 @@ async function fetchMessages(selectedUserName) {
   };
 
   try {
+
+    document.getElementById("loading").style.display = "block";
+    
     const resp = await fetch(API_URL, req_options);
     const data = await resp.json();
+
+
+    document.getElementById("loading").style.display = "none";
 
     if (!resp.ok) throw new Error(data.error.message);
 
@@ -318,12 +337,19 @@ async function botMessage() {
         console.log("selectuser is invalid");
          return;
       }
+
+
+    document.getElementById("loading").style.display = "block";
+    
     const res = await fetch(`${API}/api/message/send/${selectedUserId}`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
     });
+
+
+    document.getElementById("loading").style.display = "none";
 
     if (res.ok) {
       
@@ -361,12 +387,16 @@ async function sendMessage() {
        return;
     }
 
+document.getElementById("loading").style.display = "block";
+  
   const res = await fetch(`${API}/api/message/send/${selectedUserId}`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text }),
   });
+
+  document.getElementById("loading").style.display = "none";
 
   if (res.ok) {
     input.value = "";
@@ -423,6 +453,8 @@ async function schedulemsg() {
        return;
     }
 
+  document.getElementById("loading").style.display = "block";
+
   const res = await fetch(`${API}/api/message/schedulemsg/${selectedUserId}`, {
       method: "POST",
       credentials: "include",
@@ -430,6 +462,8 @@ async function schedulemsg() {
       body: JSON.stringify({ myId, text, Timestamp: dateObject }),  // Send Date object instead of string
   });
 
+document.getElementById("loading").style.display = "none";
+  
   if (res.ok) {
       input.value = "";
       input2.value = "";
@@ -529,8 +563,15 @@ socket.on("receiveMessage", async({ senderId, message }) => {
  };
 
  try {
+
+document.getElementById("loading").style.display = "block";
+
+   
    const resp = await fetch(API_URL, req_options);
    const data = await resp.json();
+
+
+   document.getElementById("loading").style.display = "none";
 
    if (!resp.ok) throw new Error(data.error.message);
 
@@ -557,13 +598,19 @@ socket.on("receiveMessage", async({ senderId, message }) => {
 });
 
 async function logout() {
+
+  document.getElementById("loading").style.display = "block";
+  
   await fetch(`${API}/api/auth/logout`, {
     method: "POST",
     credentials: "include",
   });
 
+document.getElementById("loading").style.display = "none";
+  
   window.location.href = "index.html";
 }
+
 
 
 
@@ -589,12 +636,16 @@ function deletemsg() {
            return;
         }
 
+      document.getElementById("loading").style.display = "block";
+
       const res = await fetch(`${API}/api/message/deletemsg/${selectedUserId}`, {
         method: "DELETE",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ myId, _Id }),
       });
+
+      document.getElementById("loading").style.display = "none";
 
       if (res.ok) {
         console.log("Deleted successfully");
