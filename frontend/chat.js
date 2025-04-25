@@ -1,6 +1,6 @@
 
 
-const API = "/";
+const API = "https://chatapplication-kptr.onrender.com";
 let selectedUserId = null;
 let authUser = null;
 let chatHistory = [];
