@@ -1,5 +1,5 @@
 
-const API = "http://localhost:5000";
+const API = "/";
 
 function showSignup() {
   document.getElementById("login-form").style.display = "none";
