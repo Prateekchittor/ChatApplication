@@ -15,12 +15,16 @@ async function login() {
   const Email = document.getElementById("login-email").value;
   const Password = document.getElementById("login-password").value;
 
+    document.getElementById("loading").style.display = "block";
+
   const res = await fetch(`${API}/api/auth/login`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ Email, Password }),
   });
+
+    document.getElementById("loading").style.display = "none";
 
   if (res.ok) {
     window.location.href = "chat.html";
