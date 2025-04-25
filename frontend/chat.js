@@ -1,6 +1,6 @@
 
 
-const API = "http://localhost:5000";
+const API = "/";
 let selectedUserId = null;
 let authUser = null;
 let chatHistory = [];
