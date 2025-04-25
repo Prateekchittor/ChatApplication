@@ -1,5 +1,5 @@
 
-const API = "/";
+const API = "https://chatapplication-kptr.onrender.com";
 
 function showSignup() {
   document.getElementById("login-form").style.display = "none";
