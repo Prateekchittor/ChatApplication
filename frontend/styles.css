@@ -407,4 +407,28 @@ h2 {
 #login-email,#login-password,#signup-name,#signup-email,#signup-password{
   border-radius: 15px;
 }
+#loading{
+  position: fixed;
+
+
+  font-size: 50px;
+
+  z-index: 100;
+
+  top:300px;
+
+  animation: animate 2s alternate 0.1s infinite;
+
+  display: none;
+  border: black 1px solid;
+  padding: 10px;
+
+  
+
+
+}
+@keyframes animate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
