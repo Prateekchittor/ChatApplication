@@ -64,9 +64,9 @@ app.use('/api/message', messageRoutes);
 // Serve static files from the frontend directory in production
 const __dirname1 = path.resolve();
 
-const NODE_ENV ='production';
 
-if (NODE_ENV === 'production') {
+
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname1, 'frontend'))); // Serve static files from 'frontend' folder
 
   // Serve index.html when visiting the root in production
