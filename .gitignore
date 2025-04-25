@@ -1,0 +1,31 @@
+# Node.js
+node_modules/
+
+# Logs
+*.log
+*.log.*
+
+# Dependency directories
+bower_components/
+
+# Build directories
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# npm packages cache
+npm-debug.log*
+
+# IDE/editor specific files
+.vscode/
+.idea/
+
+# Generated files from package-lock.json
+package-lock.json
+yarn.lock

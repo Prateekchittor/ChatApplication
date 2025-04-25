@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+
+  
+  <link rel="icon" type="image/png" href="icon5.png">
+
+
+</head>
+<body>
+
+
+  <div id="chat-container">
+
+
+    
+
+    <div id="sidebar">
+      <h2>Users : </h2>
+      <div id="user-list"></div>
+      <button onclick="logout()" class="btn"><b>Logout</b></button>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="chat-box">
+
+
+      <div id="heading">
+
+
+        <button class="material-symbols-outlined" id="time" onclick="readtime()">calendar_clock</button>
+        <div id="username"></div>
+        
+
+
+        
+        <div id="botsugg" onclick="botMessage()">
+
+          <button class="material-symbols-outlined" id="botface">smart_toy</button><h1>&nbsp :&nbsp </h1><h4 id="botreply"></h4></div>
+        
+      </div>
+      
+
+      
+
+
+
+    
+
+     
+      <div id="messages"></div>
+      
+      <div id="message-form">
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button onclick="sendMessage()" id="submit">Send</button>
+      </div>
+
+
+    </div>
+
+
+
+
+    <div id="readtime">
+      <h3 style="display: inline-block;">Schedule Text</h3>
+      <button class="material-symbols-outlined" id="cancel" onclick="cancel()">cancel</button>
+      
+      <input type="text" placeholder="Enter message" id="schtext">
+
+
+
+     
+      <input type="datetime-local" id="schtime" placeholder="Enter time">
+
+
+      <button onclick="schedulemsg()"  id="schsub"> <b>Submit</b></button>
+      
+    </div>
+
+
+
+    
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script src="chat.js" ></script>
+
+</body>
+</html>
