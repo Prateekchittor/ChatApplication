@@ -6,7 +6,7 @@ let authUser = null;
 let chatHistory = [];
 
 // Connect to Socket.IO
-const socket = io("http://localhost:5000", {
+const socket = io("https://chatapplication-kptr.onrender.com", {
   withCredentials: true
 });
 
