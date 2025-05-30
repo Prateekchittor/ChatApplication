@@ -457,3 +457,36 @@ h2 {
   to { transform: rotate(360deg); }
 }
 
+
+#chatbot{
+  background-color: rgb(152, 255, 100);
+border: rgb(0, 0, 0) 2px solid;
+
+
+height: 90px;
+width: 90px;
+
+padding: 0px;
+
+border-radius: 20px;
+
+
+
+
+
+
+background: linear-gradient(
+  60deg,
+  #d0fff1 0%,     /* pale mint */
+  #b2f0e6 25%,    /* light aqua */
+  #c6f7ff 50%,    /* soft sky blue */
+  #d5eaff 75%,    /* very light blue */
+  #e0ffef 100%    /* minty white */
+);
+
+
+
+align-self: center;
+
+}
+
