@@ -655,6 +655,15 @@ function deletemsg() {
     });
   }
 }
+// --------------------------- ChatBot ------------------------------------------------
+
+
+let chatbot = document.getElementById("chatbot");
+
+chatbot.addEventListener("click",()=>{
+  window.location.href = "chatbot_index.html";
+
+});
 
 
 
