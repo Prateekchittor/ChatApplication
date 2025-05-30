@@ -1,8 +1,18 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #5b93b8, #2e1d69);
   text-align: center;
+
+  
+background: linear-gradient(
+  60deg,
+  #6dff83 0%,      /* bright purple */
+  #02387a 20%,     /* lighter violet */
+  #060043 40%,     /* electric blue */
+  #17dcff 90%,     /* bright cyan */
+  #00dbab 100%     /* minty aqua */
+);
+  
 }
 
 #auth-container,
@@ -23,6 +33,21 @@ body {
   background: linear-gradient(135deg, #f4fbff, #c6cfff);
 position: relative;
 bottom:120px;
+
+
+  background: linear-gradient(
+  60deg,
+  #ce64ff 0%,     /* bright purple */
+  #7930d9 20%,    /* deep violet */
+  #3f2dff 40%,    /* electric blue */
+  #00a8c6 90%,    /* bright cyan */
+  #00dbab 100%    /* minty aqua */
+);
+
+
+
+
+  
 }
 
 input {
