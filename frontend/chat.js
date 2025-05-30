@@ -82,23 +82,11 @@ async function loadUsers() {
     ele.style.textAlign = "center";
     ele.style.margin = "15px";
     ele.style.fontSize = "22px";
-    ele.style.backgroundColor = "rgb(179, 255, 231)";
+    ele.style.background ="linear-gradient(135deg,rgb(202, 142, 255),rgb(149, 96, 255))";
 
    
 
    
-    ele.addEventListener('mouseover', () => {
-
-      ele.style.background = "linear-gradient(120deg, #b8e8ff, #649bf3, #2ea4ff)";
-      
-    });
-
-    ele.addEventListener('mouseout', () => {
-      
-      ele.style.background = "";
-      ele.style.backgroundColor = "rgb(179, 255, 231)";
-    
-      });
 
 
     
