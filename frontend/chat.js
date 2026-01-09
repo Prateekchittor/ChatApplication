@@ -12,7 +12,7 @@ const socket = io("https://chatapplication-kptr.onrender.com", {
 
 // Gemini API config
 
-const API_KEY = "AIzaSyCcSJ7MqOeYnzc2D9pBr0kVSwpDhz6izwA";
+const API_KEY = "AIzaSyA4_VDcxMx7wKXnWLqCC0yb5g4CD-Gh95I";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
 
